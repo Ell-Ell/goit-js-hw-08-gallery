@@ -30,7 +30,7 @@ refs.openModal.addEventListener('click', onOpenModal);
 refs.closeModal.addEventListener('click', onCloseModal);
 refs.overlay.addEventListener('click', onCloseModal);
 window.addEventListener('keydown', onEscPress);
-
+// ----------------- Мои функции--------------
 function onEscPress(e) {
   const isEskKey = e.code === 'Escape';
   if (isEskKey) {
@@ -48,5 +48,6 @@ function onCloseModal() {
 }
 
 function onOpenModal() {
+  event.preventDefault();
   refs.backdrop.classList.add('is-open');
 }
