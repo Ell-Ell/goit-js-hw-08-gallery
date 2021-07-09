@@ -1,15 +1,15 @@
 import galleryItems from './app.js';
 
 const refs = {
-   openModal: document.querySelector('js-gallery'),
-    closeModal: document.querySelector('[data-action="close-lightbox"]'),
-    backdrop: document.querySelector('.js-lightbox'),
-    lightbox__image: document.querySelector('.lightbox__image'),
-    overlay: document.querySelector('.lightbox__overlay'),
+  openModal: document.querySelector('js-gallery'),
+  closeModal: document.querySelector('[data-action="close-lightbox"]'),
+  backdrop: document.querySelector('.js-lightbox'),
+  lightbox__image: document.querySelector('.lightbox__image'),
+  overlay: document.querySelector('.lightbox__overlay'),
 };
 // -----------------разметка--------------
 const CreateMarkupImg = galleryItems.map(({ preview, original, description }) => {
-    return `<li class="gallery__item">
+  return `<li class="gallery__item">
                 <a
                     class="gallery__link"
                     href="${original}"
@@ -24,9 +24,29 @@ const CreateMarkupImg = galleryItems.map(({ preview, original, description }) =>
             </li>`;
 });
 
-
 refs.openModal.insertAdjacentHTML('afterbegin', CreateMarkupImg.join(' '));
 // ----------------- add addEventListener--------------
 // refs.openModal.addEventListener('click', onOpenModal);
 //  refs.closeModal.addEventListener('click', onCloseModal);
-// refs.overlay.addEventListener('keydown', onBackdropPress);
+// refs.overlay.addEventListener('click', onBackdropPress);
+// window.addEventListener('keydown', onEscPress)
+
+function onEscPress(e) {
+  const isEskKey = e.code === 'Escape';
+  if (isEskKey) {
+    onCloseModal();
+  }
+}
+
+function onCloseModal() {
+  refs.backdrop.classList.remove('is-open');
+  refs.lightbox__image.src = '';
+  refs.lightbox__image.alt = '';
+  refs.closeModal.removeEventListener('click', onCloseModal);
+  refs.overlay.removeEventListener('click', onCloseModal);
+  window.removeEventListener('click', onEscPress);
+}
+
+function onOpenModal() {
+  refs.backdrop.classList.add('is-open');
+}
