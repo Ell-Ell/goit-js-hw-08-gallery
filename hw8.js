@@ -1,8 +1,7 @@
 import galleryItems from './app.js';
 
 const refs = {
-   
-    openModal: document.querySelector('js-gallery'),
+   openModal: document.querySelector('js-gallery'),
     closeModal: document.querySelector('[data-action="close-lightbox"]'),
     backdrop: document.querySelector('.js-lightbox'),
     lightbox__image: document.querySelector('.lightbox__image'),
