@@ -1,6 +1,6 @@
 import galleryItems from './app.js';
 
-const ref = {
+const refs = {
    
     openModal: document.querySelector('js-gallery'),
     closeModal: document.querySelector('[data-action="close-lightbox"]'),
@@ -8,7 +8,7 @@ const ref = {
     lightbox__image: document.querySelector('.lightbox__image'),
     overlay: document.querySelector('.lightbox__overlay'),
 };
-
+// -----------------разметка--------------
 const CreateMarkupImg = galleryItems.map(({ preview, original, description }) => {
     return `<li class="gallery__item">
                 <a
@@ -26,8 +26,8 @@ const CreateMarkupImg = galleryItems.map(({ preview, original, description }) =>
 });
 
 
-openModal.insertAdjacentHTML('afterbegin', CreateMarkupImg.join(' '));
-
-openModal.addEventListener('click', onOpenModal);
- backdrop.addEventListener('click', );
-window.addEventListener('keydown', );
+refs.openModal.insertAdjacentHTML('afterbegin', CreateMarkupImg.join(' '));
+// ----------------- add addEventListener--------------
+refs.openModal.addEventListener('click', onOpenModal);
+ refs.closeModal.addEventListener('click', onCloseModal);
+window.addEventListener('keydown', onBackdropPress);
