@@ -28,7 +28,7 @@ refs.openModal.insertAdjacentHTML('afterbegin', CreateMarkupImg.join(' '));
 // ----------------- add addEventListener--------------
 refs.openModal.addEventListener('click', onOpenModal);
 refs.closeModal.addEventListener('click', onCloseModal);
-refs.overlay.addEventListener('click', onBackdropPress);
+refs.overlay.addEventListener('click', onCloseModal);
 window.addEventListener('keydown', onEscPress);
 
 function onEscPress(e) {
