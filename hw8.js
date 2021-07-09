@@ -52,9 +52,9 @@ function onOpenModal(event) {
     return;
   }
   event.preventDefault();
-  console.log(event.target.dataset);
-  // current target?
+  // console.log(event.target.dataset);
+
+  refs.backdrop.classList.add('is-open');
   refs.lightbox__image.src = 'event.target.dataset.source';
   refs.lightbox__image.alt = 'event.target.alt';
-  refs.backdrop.classList.add('is-open');
 }
