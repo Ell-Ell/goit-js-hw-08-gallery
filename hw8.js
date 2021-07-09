@@ -26,10 +26,10 @@ const CreateMarkupImg = galleryItems.map(({ preview, original, description }) =>
 
 refs.openModal.insertAdjacentHTML('afterbegin', CreateMarkupImg.join(' '));
 // ----------------- add addEventListener--------------
-// refs.openModal.addEventListener('click', onOpenModal);
-//  refs.closeModal.addEventListener('click', onCloseModal);
-// refs.overlay.addEventListener('click', onBackdropPress);
-// window.addEventListener('keydown', onEscPress)
+refs.openModal.addEventListener('click', onOpenModal);
+refs.closeModal.addEventListener('click', onCloseModal);
+refs.overlay.addEventListener('click', onBackdropPress);
+window.addEventListener('keydown', onEscPress);
 
 function onEscPress(e) {
   const isEskKey = e.code === 'Escape';
