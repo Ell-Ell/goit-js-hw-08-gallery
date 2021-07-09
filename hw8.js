@@ -27,6 +27,6 @@ const CreateMarkupImg = galleryItems.map(({ preview, original, description }) =>
 
 refs.openModal.insertAdjacentHTML('afterbegin', CreateMarkupImg.join(' '));
 // ----------------- add addEventListener--------------
-refs.openModal.addEventListener('click', onOpenModal);
- refs.closeModal.addEventListener('click', onCloseModal);
-window.addEventListener('keydown', onBackdropPress);
+// refs.openModal.addEventListener('click', onOpenModal);
+//  refs.closeModal.addEventListener('click', onCloseModal);
+// refs.overlay.addEventListener('keydown', onBackdropPress);
