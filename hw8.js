@@ -42,8 +42,6 @@ function onCloseModal() {
   refs.backdrop.classList.remove('is-open');
   refs.lightbox__image.src = '';
   refs.lightbox__image.alt = '';
-  refs.closeModal.removeEventListener('click', onCloseModal);
-  refs.overlay.removeEventListener('click', onCloseModal);
   window.removeEventListener('click', onEscPress);
 }
 
@@ -52,9 +50,7 @@ function onOpenModal(event) {
   if (event.target.nodeName !== 'IMG') {
     return;
   }
-
   // console.log(event.target.dataset);
-
   refs.backdrop.classList.add('is-open');
   refs.lightbox__image.src = event.target.dataset.source;
   refs.lightbox__image.alt = event.target.alt;
