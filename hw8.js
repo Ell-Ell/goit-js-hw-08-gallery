@@ -43,7 +43,6 @@ function onCloseModal() {
   refs.lightbox__image.src = '';
   refs.lightbox__image.alt = '';
   window.removeEventListener('click', onEscPress);
-  console.log('hello');
 }
 
 function onOpenModal(event) {
