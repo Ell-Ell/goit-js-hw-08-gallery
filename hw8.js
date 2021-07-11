@@ -29,7 +29,7 @@ refs.openModal.insertAdjacentHTML('afterbegin', CreateMarkupImg.join(' '));
 refs.openModal.addEventListener('click', onOpenModal);
 refs.closeModal.addEventListener('click', onCloseModal);
 refs.overlay.addEventListener('click', onCloseModal);
-// window.addEventListener('keydown', onEscPress);
+
 // ----------------- Мои функции--------------
 function onEscPress(e) {
   const isEskKey = e.code === 'Escape';
@@ -43,6 +43,7 @@ function onCloseModal() {
   refs.lightbox__image.src = '';
   refs.lightbox__image.alt = '';
   window.removeEventListener('click', onEscPress);
+  console.log('hello');
 }
 
 function onOpenModal(event) {
